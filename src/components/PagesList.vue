@@ -1,34 +1,40 @@
 <template>
-  <div class="container">
-    <div v-for="(page, key) in data" class="menu" :style="{order: page.position}">
-      <div>
-        {{ key }}
-      </div>
-      <div class="collapse">
-        {{page.position}}
-      </div>
-  </div>
+<!--  <div class="container">-->
+<!--    <div v-for="(page, key) in data" class="menu" :style="{order: page.position}">-->
+<!--      <div>-->
+<!--        {{ key }}-->
+<!--      </div>-->
+<!--      <div class="collapse">-->
+<!--        {{page.position}}-->
+<!--      </div>-->
+<!--  </div>-->
 
-  </div>
+
+<TextEditor @update:modelValue="saveText" />
+
+
+
+<!--  </div>-->
 
 </template>
 
 <script>
 import useDatabase from '../composable/database'
-import { computed } from 'vue'
+import { computed, onMounted, ref } from 'vue'
+import TextEditor from './TextEditor.vue'
+
+
 
 export default {
   name: 'PagesList',
-
+  components: { TextEditor },
   setup() {
     const {get, data} = useDatabase('siteMap')
     get()
 
-    const menuData = computed(() => {
+    const saveText = (data) => console.log(data)
 
-    })
-
-    return {data}
+    return {data, saveText}
   }
 }
 </script>
@@ -43,4 +49,6 @@ export default {
   padding: 10px;
   border: 1px solid black
 }
+
+
 </style>

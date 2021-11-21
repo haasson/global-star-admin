@@ -8,7 +8,13 @@
   },
   "dependencies": {
     "@babel/core": "^7.16.0",
+    "@editorjs/editorjs": "^2.22.2",
+    "@editorjs/header": "^2.6.1",
+    "@editorjs/image": "^2.6.1",
+    "@editorjs/list": "^1.6.2",
+    "@editorjs/table": "^2.0.1",
     "@popperjs/core": "^2.10.2",
+    "@vueup/vue-quill": "^1.0.0-beta.7",
     "axios": "^0.24.0",
     "firebase": "^9.4.1",
     "reset-css": "^5.0.1",
